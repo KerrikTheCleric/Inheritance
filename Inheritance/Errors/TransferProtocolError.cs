@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inheritance {
-    internal class TransferProtocolError : UserError {
+namespace Inheritance.Errors
+{
+    internal class TransferProtocolError : UserError
+    {
 
-        public override string UEMessage() {
+        public override string UEMessage()
+        {
             return "Transfer protocol broken. This fired an error!";
         }
     }

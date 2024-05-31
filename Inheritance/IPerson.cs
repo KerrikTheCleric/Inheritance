@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Inheritance {
-    internal abstract class UserError {
-        public abstract string UEMessage();
+    internal interface IPerson {
+        public void Talk();
     }
 }

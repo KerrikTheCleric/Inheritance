@@ -1,6 +1,12 @@
-﻿namespace Inheritance {
+﻿using Inheritance.Errors;
+using Inheritance.Animals;
+
+namespace Inheritance
+{
     internal class Program {
         static void Main(string[] args) {
+
+            // Inkapsling
 
             PersonHandler pHandler = new PersonHandler();
             Person p1;
@@ -25,11 +31,7 @@
                 Console.WriteLine(e.Message);
             }
 
-
-
-
-
-
+            // Polymorfism
 
             Console.WriteLine("");
             List<UserError> errorList = new List<UserError>();
@@ -43,6 +45,20 @@
             foreach (UserError error in errorList) {
                 Console.WriteLine(error.UEMessage());
             }
+
+            // Arv
+
+            Hedgehog hedgehog = new Hedgehog("Sonic", Colour.Blue, 20, 55.9, 16);
+            Wolf wolf = new Wolf("Ripper", Colour.Brown, 3, 67.4, 250);
+            Wolfman wolfman = new Wolfman("Blythe", Colour.Brown, 50, 125.7, 313.5);
+            Console.WriteLine("");
+            hedgehog.DoSound();
+            wolf.DoSound();
+            wolfman.DoSound();
+            wolfman.Talk();
+
+            // 13. Då lägger vi till ett nytt attribut i Bird.
+            // 14. Då lägger vi till ett nytt attribut i Animal.
 
         }
     }

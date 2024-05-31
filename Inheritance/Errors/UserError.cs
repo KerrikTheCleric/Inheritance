@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inheritance {
-    internal abstract class Animal {
-        string _name;
-
-
+namespace Inheritance.Errors
+{
+    internal abstract class UserError
+    {
+        public abstract string UEMessage();
     }
 }
