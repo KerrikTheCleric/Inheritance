@@ -38,5 +38,7 @@ namespace Inheritance.Animals
 
         public abstract void DoSound();
 
+        public abstract string Stats();
+
     }
 }

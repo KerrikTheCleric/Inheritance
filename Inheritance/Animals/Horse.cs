@@ -19,5 +19,9 @@ namespace Inheritance.Animals
         public override void DoSound(){
             Console.WriteLine("Neeeeheeeheee!"); 
         }
+
+        public override string Stats() {
+            return $"{Name} - {Colour} - Age: {Age} - Legs: {Legs} - Weight: {Weight} - Top Speed: {TopSpeed}";
+        }
     }
 }

@@ -14,6 +14,8 @@ namespace Inheritance {
         Brown,
         Gray,
         Red,
-        Pink
+        Pink,
+        White,
+        Black
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Inheritance.Errors;
 using Inheritance.Animals;
+using Inheritance.Animals.Birds;
 
 namespace Inheritance
 {
@@ -60,6 +61,66 @@ namespace Inheritance
             // 13. Då lägger vi till ett nytt attribut i Bird.
             // 14. Då lägger vi till ett nytt attribut i Animal.
 
+            // Mer Polymorfism
+
+            Dog dog = new Dog("Scratch", Colour.Orange, 2, 35.7, "Shiba Inu");
+            Pelican pelican = new Pelican("Davis", Colour.White, 4, 25.9, true, 13.5);
+            Horse horse = new Horse("Rocketeer", Colour.Black, 2, 100.7, 90);
+            Worm worm = new Worm("Jim", Colour.White, 1, 0.5, false);
+            Flamingo flamingo = new Flamingo("Quixote", Colour.Pink, 3, 33.3, false, true);
+            Swan swan = new Swan("Elsa", Colour.White, 4, 45, false, 35);
+
+            List<Animal> animalList = new List<Animal>();
+            animalList.Add(hedgehog);
+            animalList.Add(wolf);
+            animalList.Add(wolfman);
+            animalList.Add(dog);
+            animalList.Add(pelican);
+            animalList.Add(horse);
+            animalList.Add(worm);
+            animalList.Add(flamingo);
+            animalList.Add(swan);
+
+            foreach (var a in animalList) {
+                Console.WriteLine(a);
+                a.DoSound();
+
+                if (a is IPerson) {
+                    IPerson iP = (IPerson)a;
+                    iP.Talk();
+                }
+                Console.WriteLine("");
+            }
+
+            List<Dog> dogList = new List<Dog>();
+
+            //dogList.Add(horse);
+
+            // 9. En lista med hundar innebär att objektet som läggs till måste vara en hund eller ärva från hund. Häst gör inte det.
+            // 10. Eftersom Person och Animal representerar egna släkter så måste listan bestå av grundtypen Object för att kunna lagra allting.
+
+            foreach (var a in animalList) {
+                Console.WriteLine(a.Stats());
+            }
+            Console.WriteLine("");
+
+            //13. Alla djur gör en en egen override på Stats som returnerar en sträng att skriva ut.
+            //    Fågelarterna gör en extra överride på Bird där dom appendar sin unika egenskap på slutet av strängen.
+
+            foreach (Dog d in animalList.OfType<Dog>()) {
+                Console.WriteLine(d.Stats());
+            }
+            Console.WriteLine("");
+
+
+            //17. Listan vet endast att allting inuti är ett Animal, den har ingen aning vad som är en hund med den metoden om man inte kollar det.
+
+            foreach (var a in animalList) {
+                if (a is Dog) {
+                    Dog d = (Dog)a;
+                    Console.WriteLine(d.Whimper());
+                }
+            }
         }
     }
 }

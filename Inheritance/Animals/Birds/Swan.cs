@@ -14,5 +14,9 @@ namespace Inheritance.Animals.Birds {
         }
 
         public int DivingSpeed { get; set; }
+
+        public override string Stats() {
+            return base.Stats() + $" - Diving Speed: {DivingSpeed}";
+        }
     }
 }

@@ -19,5 +19,10 @@ namespace Inheritance.Animals {
         public override void DoSound() {
             Console.WriteLine("Sniff Sniff!");
         }
+
+        public override string Stats() {
+            return $"{Name} - {Colour} - Age: {Age} - Legs: {Legs} - Weight: {Weight} - Spike Count: {SpikeCount}";
+
+        }
     }
 }

@@ -14,5 +14,9 @@ namespace Inheritance.Animals.Birds {
         }
 
         public bool IsFabulous { get; set; }
+
+        public override string Stats() {
+            return base.Stats() + $" - Is Fabulous: {IsFabulous}";
+        }
     }
 }

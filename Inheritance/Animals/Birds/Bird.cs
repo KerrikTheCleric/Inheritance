@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inheritance.Animals.Birds
 {
-    internal class Bird : Animal
-    {
+    internal class Bird : Animal {
 
         private bool _loud;
 
@@ -21,6 +20,11 @@ namespace Inheritance.Animals.Birds
         public override void DoSound()
         {
             Console.WriteLine("Chirp Chirp!");
+        }
+
+        public override string Stats() {
+            return $"{Name} - {Colour} - Age: {Age} - Legs: {Legs} - Weight: {Weight} - Loud: {Loud}";
+
         }
     }
 }

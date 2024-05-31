@@ -14,5 +14,9 @@ namespace Inheritance.Animals.Birds {
         }
 
         public double BeakWaterVolume { get; set; }
+
+        public override string Stats() {
+            return base.Stats() + $" - Beak Water Volume: {BeakWaterVolume}";
+        }
     }
 }
