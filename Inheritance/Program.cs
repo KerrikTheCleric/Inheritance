@@ -24,6 +24,26 @@
             } catch (Exception e) {
                 Console.WriteLine(e.Message);
             }
+
+
+
+
+
+
+
+            Console.WriteLine("");
+            List<UserError> errorList = new List<UserError>();
+            errorList.Add(new XMLInputError());
+            errorList.Add(new TransferProtocolError());
+            errorList.Add(new XMLInputError());
+            errorList.Add(new NumericInputError());
+            errorList.Add(new FileError());
+            errorList.Add(new TextInputError());
+
+            foreach (UserError error in errorList) {
+                Console.WriteLine(error.UEMessage());
+            }
+
         }
     }
 }
